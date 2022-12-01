@@ -25,7 +25,11 @@ jobs:
           name: Mission file
           path: out/*.miz
 
-      - name: Release
+      - name: Rename for release (if a new version is tagged)
+        run: python .github/rename.py ${{ github.ref }}
+        if: startsWith(github.ref, 'refs/tags/v')
+
+      - name: Release (if a new version is tagged)
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/v')
         with:
