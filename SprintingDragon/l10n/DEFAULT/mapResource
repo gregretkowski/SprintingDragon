@@ -2,7 +2,7 @@ mapResource =
 {
     ["ResKey_Action_30"] = "MicClick.ogg",
     ["ResKey_Action_25"] = "This is Chinese Navy2.ogg",
-    ["ResKey_Action_29"] = "shotdown2.ogg",
     ["ResKey_Action_28"] = "missile2.ogg",
+    ["ResKey_Action_29"] = "shotdown2.ogg",
     ["ResKey_Action_23"] = "MicClick.ogg",
 } -- end of mapResource
