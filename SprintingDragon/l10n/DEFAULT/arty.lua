@@ -124,13 +124,16 @@ local function artyDetectionStateMachine(side, arties)
             return false
         end
         
+        -- loop through all units in group, return the first one that has an entry in the range table
         local artyRange = nil
         local unitIdx = 1
         while artyRange == nil and unitIdx < #units do
             local unit = units[unitIndex]
             artyRange = ARTY_RANGES_BY_TYPE[unit:GetTypeName()]
+            unitIdx = unitIdx + 1
         end
         if artyRange == nil then
+            env.warning("Could not find entry in artillery range table for group " .. artyGroup:GetName())
             return false
         end
         local minRange = artyRange[1]
