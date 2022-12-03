@@ -114,8 +114,8 @@ local function artyDetectionStateMachine(side, arties)
         ["Grad-URAL"] = {5000, 19000},
         ["Uragan_BM-27"] = {11500, 35800},
         ["SpGH_Dana"] = {30, 18500},
-        ["Mortar"] = {30, 6500},
-        ["2B11 mortar"] = {60, 22000},
+        ["2B11 mortar"] = {30, 6500},
+        ["PLZ05"] = {60, 22000},
     }
     
     local function isWithinRange(unit, artyGroup)
