@@ -1,3 +1,5 @@
+
+
 --local RU_MLRS_NAMES = {}
 local RU_ARTY_NAMES = {"PLAN_SPH", "PLAN_2S9"}
 --local US_ARTY_NAMES = {}
@@ -5,12 +7,16 @@ local US_ARTY_NAMES = {"ROC_M109", "ROC_120mm"}
 
 local DANGER_CLOSE_RANGE_METERS = 500
 
-ARTY:SetDebugOFF()
-ARTY:SetReportOFF()
+ARTY:SetDebugON()
+ARTY:SetReportON()
 ARTY:SetMarkAssignmentsOn()
 local allArties = {}
 local allRedArties = {}
 local allBlueArties ={}
+
+ARTY:New("ROK_K9-1"):Start()
+ARTY:New("ROK_K9-2"):Start()
+ARTY:New("USS_Dewey"):Start()
 
 -- create RU artillery
 local ruArtyCount = 1
