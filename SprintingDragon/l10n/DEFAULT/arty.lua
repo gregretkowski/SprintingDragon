@@ -16,6 +16,7 @@ local allBlueArties ={}
 
 ARTY:New("ROK_K9-1"):Start()
 ARTY:New("ROK_K9-2"):Start()
+ARTY:New("USA_M270"):Start()
 ARTY:New("USS_Dewey"):Start()
 
 -- create RU artillery
