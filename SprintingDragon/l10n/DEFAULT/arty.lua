@@ -14,10 +14,9 @@ local allArties = {}
 local allRedArties = {}
 local allBlueArties ={}
 
-ARTY:New("ROK_K9-1"):Start()
-ARTY:New("ROK_K9-2"):Start()
-ARTY:New("USA_M270"):Start()
-ARTY:New("USS_Dewey"):Start()
+ARTY:New("ROK_K9","K9"):Start()
+ARTY:New("ROCS_Fong_Yang","Yang"):Start()
+ARTY:New("USS_Dewey","Dewey"):Start()
 
 -- create RU artillery
 local ruArtyCount = 1
