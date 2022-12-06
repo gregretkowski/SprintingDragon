@@ -527,6 +527,7 @@ ctld.loadableGroups = {
     {name = "LAV-25", mg = 1},
     {name = "Avenger", aa = 1},
     {name = "TOW", at = 1 },
+    {name = "M939 Ammo Truck", mortar = 1 },
     --{name = "JTAC Group", inf = 4, jtac = 1 }, -- will make a loadable group with 4 infantry and a JTAC soldier for both coalitions
     --{name = "Single JTAC", jtac = 1 }, -- will make a loadable group witha single JTAC soldier for both coalitions
     -- {name = "Mortar Squad Red", inf = 2, mortar = 5, side =1 }, --would make a group loadable by RED only
@@ -1990,7 +1991,7 @@ function ctld.generateTroopTypes(_side, _countOrTemplate, _country)
 
         if _countOrTemplate.mortar then
             ctld.logTrace(string.format("_countOrTemplate.mortar=%s", ctld.p(_countOrTemplate.mortar)))
-            _troops = ctld.insertIntoTroopsArray("2B11 mortar",_countOrTemplate.mortar,_troops)
+            _troops = ctld.insertIntoTroopsArray("M 818",_countOrTemplate.mortar,_troops)
             _weight = _weight + getSoldiersWeight(_countOrTemplate.mortar, ctld.MORTAR_WEIGHT)
             ctld.logTrace(string.format("_weight=%s", ctld.p(_weight)))
         end
