@@ -1,14 +1,14 @@
 
 
 --local RU_MLRS_NAMES = {}
-local RU_ARTY_NAMES = {"PLAN_SPH", "PLAN_2S9"}
+local RU_ARTY_NAMES = {"PLAN_SPH", "PLAN_2S9", "PLAN_120mm"}
 --local US_ARTY_NAMES = {}
 local US_ARTY_NAMES = {"ROC_M109", "ROC_120mm"}
 
 local DANGER_CLOSE_RANGE_METERS = 500
 
-ARTY:SetDebugON()
-ARTY:SetReportON()
+ARTY:SetDebugOFF()
+ARTY:SetReportOFF()
 ARTY:SetMarkAssignmentsOn()
 local allArties = {}
 local allRedArties = {}
