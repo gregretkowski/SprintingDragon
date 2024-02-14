@@ -4,6 +4,10 @@ from glob import glob
 import argparse
 
 
+miz_subdir = 'SprintingDragon'
+mizname = 'SprintingDragon'
+
+
 def find_dcs_directory():
     home = os.environ['USERPROFILE']
     saved_games = os.path.join(home, 'Saved Games')
@@ -40,6 +44,17 @@ def main():
         action='store_true',
         help='Extract the contents of the miz file from the DCS saved ' +
         'games dir to the local repo.')
+    command_group.add_argument(
+        '--setversion',
+        action='store_true',
+        help='Updates dictionary to set a version string')
+    parser.add_argument(
+        '-v',
+        '--version',
+        nargs='?',
+        #const=os.getcwd(),
+        default=None,
+        help="Sets the version string")
     parser.add_argument(
         '-d',
         '--directory',
@@ -55,8 +70,7 @@ def main():
         help='Overwrite uncommitted changes when unpacking the mission')
     args = parser.parse_args()
 
-    miz_subdir = 'SprintingDragon'
-    mizname = 'SprintingDragon'
+
     miz_fullname = mizname + '.miz'
     miz_fullpath = canonical_path(miz_fullname)
 
@@ -100,10 +114,26 @@ def main():
             shutil.unpack_archive(miz_fullname, miz_subdir, format='zip')
             os.remove(miz_local)
 
+    def setversion():
+        if args.version is None:
+            print("No version specified, skipping")
+            return
+        else:
+            version = args.version
+            print(f"Setting version to {version}")
+            for filename in glob(f"{miz_subdir}/l10n/DEFAULT/dictionary", recursive=True):
+                with open(filename, 'r') as file:
+                    filedata = file.read()
+                filedata = filedata.replace('|PRERELEASE|', version)
+
+                with open(filename, 'w') as file:
+                    file.write(filedata)
     if args.pack:
         pack()
     elif args.unpack:
         unpack()
+    elif args.setversion:
+        setversion()
     else:
         assert (False)
 
